@@ -13,13 +13,13 @@ function ProductContextProvider(props) {
       setProducts(await getproducts());
     };
     fetchapi();
-  });
+  },[]);
   return (
-    <div>
+   
       <ProductContext.Provider value={products}>
         {props.children}
       </ProductContext.Provider>
-    </div>
+  
   );
 }
 

@@ -1,13 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {shorter } from '../../Functions/functions'
-function Product({productsData}) {
+const Product=({productsData}) =>{
     return (
         <div>
-            <img src={productsData.image} style={{width:"200px"}}/>
+            <img src={productsData.image} alt='product' style={{width:"200px"}}/>
             <h1>{shorter(productsData.title)}</h1>
-            <h3>{productsData.price}</h3>
+            <h3>{productsData.price} $</h3>
         <div>
-            <a>Details</a>
+            <Link to={`/product/${productsData.id}`}>Details</Link>
             <div>
                 <button></button>
             </div>
@@ -15,5 +16,6 @@ function Product({productsData}) {
         </div>
     )
 }
-
+ 
 export default Product
+ 
