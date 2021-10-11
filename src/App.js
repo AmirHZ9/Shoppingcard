@@ -7,20 +7,20 @@ import ProductDetails from "./Components/productDetails";
 
 
 import ProductContextProvider from "./context/ProductContextProvider";
-import Cartcontextprovider ,{CartContext} from "./context/cartcontextprovider";
+import CartContextProvider ,{CartContext}from "./context/CartContextProvider";
 
 
 
 function App() {
   return (
     <ProductContextProvider>
-      <Cartcontextprovider>
+      <CartContextProvider>
         <Switch>
           <Route path="/product/:id" component={ProductDetails} />
           <Route path="/product" component={Store} />
           <Redirect to="/product" />
         </Switch>
-      </Cartcontextprovider>
+      </CartContextProvider>
     </ProductContextProvider>
   );
 }
