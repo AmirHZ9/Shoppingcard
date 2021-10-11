@@ -9,7 +9,7 @@ const ProductDetails = (props) => {
 
   return (
     <div>
-     <img src={image}/>
+     <img src={image} alt="product"/>
      <h1>{title}</h1>
      <p>{description}</p>
      <p>{category}</p>
