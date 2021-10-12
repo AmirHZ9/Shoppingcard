@@ -4,6 +4,8 @@ import Product from "../Components/shared/Product";
 
 //contex
 import { ProductContext } from "../context/ProductContextProvider";
+
+
 function Store() {
   const products = useContext(ProductContext);
   return (

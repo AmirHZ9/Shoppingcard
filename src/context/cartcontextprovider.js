@@ -54,7 +54,7 @@ const cartReducer =(state, action) => {
     }
 }
 
-export const CartContext =createContext()
+export const CartContext = createContext()
 
 const  CartContextProvider = ({children}) => {
 
