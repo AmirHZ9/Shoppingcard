@@ -1,4 +1,5 @@
 import React ,{useReducer,createContext} from 'react'
+import Product from '../Components/shared/Product'
 
 const initialState = {
     selectedItems : [],
@@ -8,6 +9,11 @@ const initialState = {
 
 }
 
+const sumItems = items => {
+    const itemsCounter = items.reduce((total ,product) => total + product.quantity, 0)
+    const total = items.reduce((total,product) => total + product.price * product.quantity, 0)
+    return{itemsCounter , total}
+}
 const cartReducer =(state, action) => {
     switch(action.type) {
         case "ADD_ITEM":
@@ -16,23 +22,29 @@ const cartReducer =(state, action) => {
                     ...action.payload, quantity : 1
                 })
             }
-            return{ ...state,selectedItems:[...state.selectedItems]}
+            return{ ...state,selectedItems:[...state.selectedItems],
+            
+                    ...sumItems(state.selectedItems)
+            }
             case "REMOVE_ITEM":
                 const newSelectedItems = state.selectedItems.filter(item => item.id !== action.payload.id)
                 return{
-                    ...state,selectedItems:[...newSelectedItems]
+                    ...state,selectedItems:[...newSelectedItems],
+                    ...sumItems(state.selectedItems)
                 }
             case "INCREASE" :
                 const IndexI = state.selectedItems.findIndex(item => item.id === action.payload.id)
                 state.selectedItems[IndexI].quantity++;
                 return{
                     ...state,
+                    ...sumItems(state.selectedItems)
                 }
             case "DECREASE" :
                 const IndexD = state.selectedItems.findIndex(item => item.id === action.payload.id)
                 state.selectedItems[IndexD].quantity--;
                 return{
                     ...state,
+                    ...sumItems(state.selectedItems)
                 }       
 
             case "CHECKOUT":
