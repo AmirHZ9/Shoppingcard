@@ -1,6 +1,6 @@
 import React ,{useContext}from 'react'
 import { CartContext } from '../../context/CartContextProvider'
-
+import styles from '../../assets/styles/cart.module.css'
 import {shorter} from '../../Functions/functions'
 
 
@@ -12,8 +12,8 @@ function Cart(props) {
     const {image, title, price,quantity} =props.data
 
     return (
-        <div>
-            <img src={image} alt='img' style={{width:"200px"}}/>
+        <div className={styles.main}>
+            <img src={image} alt='img' className={styles.image}/>
             <div>
                 <h3>{shorter(title)}</h3>
                 <p>{price} $ </p>

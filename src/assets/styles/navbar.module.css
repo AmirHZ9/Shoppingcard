@@ -6,6 +6,8 @@
   justify-content: space-around;
   align-items: center;
   position: fixed;
+  top: 0;
+  
 }
 .link {
   color: #14213d;
