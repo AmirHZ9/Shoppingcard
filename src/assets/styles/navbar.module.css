@@ -1,0 +1,22 @@
+.main {
+  width: 100%;
+  background-color: #fca311;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+}
+.link {
+  color: #14213d;
+
+  font-weight: bold;
+}
+.shopicon{
+    position: relative;
+}
+.number{
+    position: absolute;
+    font-weight: bold;
+    
+}
