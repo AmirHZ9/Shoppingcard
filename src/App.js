@@ -8,7 +8,7 @@ import Shopcart from "./Components/ShopCart";
 
 
 import ProductContextProvider from "./context/ProductContextProvider";
-import CartContextProvider ,{CartContext}from "./context/CartContextProvider";
+import CartContextProvider from "./context/CartContextProvider";
 
 
 

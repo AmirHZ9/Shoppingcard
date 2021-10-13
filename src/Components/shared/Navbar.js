@@ -13,7 +13,7 @@ function Navbar() {
             </div>
             <div>
                 <span>
-                    <Link to='/cart'>  <img src={shopicon} /> </Link> 
+                    <Link to='/cart'>  <img src={shopicon} alt='shop' /> </Link> 
                     <span>{state.itemsCounter} </span>
 
                 </span>
