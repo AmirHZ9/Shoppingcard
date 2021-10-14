@@ -19,16 +19,16 @@ function Cart(props) {
                 <p>{price} $ </p>
             </div>
             <div>
-                <span>{quantity}</span>
+                <span className={styles.num}>{quantity}</span>
             </div>
             <div>
                 {
                     quantity > 1 ?
-                    <button onClick={() => dispatch({type:"DECREASE" , payload:props.data})} >-</button>:
-                    <button onClick={() => dispatch({type:"REMOVE_ITEM" , payload:props.data})} > <img src={trash} alt='trash' style={{width:"20px"}}/></button>
+                    <button onClick={() => dispatch({type:"DECREASE" , payload:props.data}) }className={styles.icon} >-</button>:
+                    <button onClick={() => dispatch({type:"REMOVE_ITEM" , payload:props.data})} > <img src={trash} alt='trash' style={{width:"14px"}}/></button>
                     
                 }
-                 <button onClick={() => dispatch({type:"INCREASE" , payload:props.data})} >+</button>
+                 <button onClick={() => dispatch({type:"INCREASE" , payload:props.data})}className={styles.icon} >+</button>
             </div>
         </div>
     )
