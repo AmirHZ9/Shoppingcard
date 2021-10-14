@@ -1,52 +1,69 @@
-.main{
-   display: flex;
-    
-    width: 500px;
-    height: 200px;
-    margin-bottom: 50px;
-    margin-left: 15px;
-    background-color: #fca311;
+.main {
+  display: flex;
 
-    border-radius: 10px;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 15px;
+  width: 500px;
+  height: 200px;
+  margin-bottom: 50px;
+  margin-left: 15px;
+  background-color: #fca311;
+
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 15px;
 }
-.image{
-    width: 200px;
-    height: 200px;
-    border-radius: 10px 0 0 10px;
+.image {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px 0 0 10px;
 }
-h3{
-    color: #14213d;
+h3 {
+  color: #14213d;
 }
 .main button {
-    padding: 5px;
-    border-radius: 5px;
-    outline: none;
-    border: #fca311 1px solid;
-    background-color: #14213d;
-    color: #fca311;
-    cursor: pointer;
-    transition: all 0.3s ease-in;
-    font-weight: bold;
-  }
-  .main button:hover {
-    background-color: #fca311;
-    color: #14213d;
-    font-weight: bold;
-    border: #14213d 1px solid;
-  }
-  .icon {
-    width: 26px;
-    font-size: 15px;
-
-  }
-  .num{
-    background-color: #14213d;
-    color: #fca311;
-    border-radius: 10px;
-    padding: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+  border: #fca311 1px solid;
+  background-color: #14213d;
+  color: #fca311;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  font-weight: bold;
+}
+.main button:hover {
+  background-color: #fca311;
+  color: #14213d;
+  font-weight: bold;
+  border: #14213d 1px solid;
+}
+.icon {
+  width: 26px;
+  font-size: 15px;
+}
+.num {
+  background-color: #14213d;
+  color: #fca311;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+}
+@media (max-width: 540px) {
+  .main {
+    display: block;
+    margin: 0 auto;
+    width: 185px;
+    height: 350px;
+    margin-bottom: 50px;
     text-align: center;
+    background-color: #fca311;
+    border-radius: 10px;
+    padding-bottom: 15px;
   }
-  
+  .image {
+    border-radius: 10px 10px 0 0;
+  }
+  .main button{
+    margin-top: 15px;
+  }
+}
