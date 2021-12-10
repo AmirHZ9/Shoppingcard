@@ -22,7 +22,7 @@ function Shopcart() {
           </p>
           <p className={styles.span}>
             <span>Total Payments:</span>
-            {state.total}
+            {state.total} $
           </p>
         
         <div className={styles.button}>
