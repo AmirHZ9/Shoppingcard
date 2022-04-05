@@ -1,11 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import Cart from "./shared/Cart";
 import styles from '../assets/styles/shopcart.module.css'
-import { CartContext } from "../context/CartContextProvider";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 function Shopcart() {
-  const { state, dispatch } = useContext(CartContext);
+  const state = useSelector(state=> state.cartState)
+  const dispatch = useDispatch()
   return (
     <div className={styles.main}>
    

@@ -4,27 +4,21 @@ import Store from "./Components/store";
 import ProductDetails from "./Components/productDetails";
 import Navbar from "./Components/shared/Navbar";
 import Shopcart from "./Components/ShopCart";
-//context
-
-
-import ProductContextProvider from "./context/ProductContextProvider";
-import CartContextProvider from "./context/CartContextProvider";
-
-
+//Redux
+import { Provider } from "react-redux";
+import store from "./Redux/store";
 
 function App() {
   return (
-    <ProductContextProvider>
-      <CartContextProvider>
-        <Navbar />
-        <Routes>
-          <Route path="/product/:id" element={<ProductDetails/>} />
-          <Route path='/cart' element={<Shopcart/>} />
-          <Route path="/product" element={<Store/>} />
-          <Route path="/*"  element={<Navigate to="/product"/>}/>
-        </Routes>
-      </CartContextProvider>
-    </ProductContextProvider>
+    <Provider store={store}>
+      <Navbar />
+      <Routes>
+        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/cart" element={<Shopcart />} />
+        <Route path="/product" element={<Store />} />
+        <Route path="/*" element={<Navigate to="/product" />} />
+      </Routes>
+    </Provider>
   );
 }
 
