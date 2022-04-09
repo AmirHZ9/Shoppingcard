@@ -9,9 +9,38 @@
   top: 0;
   
 }
+.hamburgerMenu{
+
+  position: relative;
+}
+.hamburgerMenu span:hover + ul{
+  display: block;
+}
+.hamburgerMenu span{
+  cursor: pointer;
+}
+.hamburgerMenu ul{
+  display: none;
+  transition: 0.3s ease-in-out;
+  position: absolute;
+  list-style-type: none;
+  left: -26px;
+  border-radius: 8px;
+}
+.hamburgerMenu li{
+  background-color: #fca311;
+  padding: 10px;
+  text-align: center;
+}
+.hamburgerMenu ul:hover{
+  display: block;
+}
+.hamburgerMenu a{
+  color: #14213d;
+  text-decoration: none;
+}
 .link {
   color: #14213d;
-
   font-weight: bold;
 }
 .shopicon{
