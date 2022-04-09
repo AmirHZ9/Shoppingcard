@@ -5,9 +5,12 @@ import shopicon from "../../assets/icons/shop.svg";
 import { useSelector } from "react-redux";
 function Navbar() {
   const state = useSelector((state) => state.cartState);
-  const categories = useSelector(state => state.productState.products)
-  console.log(categories)
-  categories.map(item => console.log(item.category))
+  const products = useSelector(state => state.productState.products)
+  // console.log(categories)
+  const category =   products.map(item => item.category)
+  const uinqueCategory = [...new Set(category)]
+ 
+  
   return (
     <div className={styles.main}>
       <div>
@@ -31,7 +34,9 @@ function Navbar() {
           <li><Link to="/jewelery">jewelery</Link></li>
           <li><Link to="/electronics">electronics</Link></li> */}
           {
-            
+            uinqueCategory.map(item => 
+              <li ><Link key={item.indexOf()} to={`/product/category/${item}`}>{item}</Link></li>
+              )
           }
         </ul>
       </div>

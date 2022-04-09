@@ -7,6 +7,7 @@ import Shopcart from "./Components/ShopCart";
 //Redux
 import { Provider } from "react-redux";
 import store from "./Redux/store";
+import Category from "./Components/categories/Category";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/product/category/:category" element={<Category />} />
         <Route path="/cart" element={<Shopcart />} />
         <Route path="/product" element={<Store />} />
         <Route path="/*" element={<Navigate to="/product" />} />
