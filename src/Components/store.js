@@ -22,7 +22,10 @@ function Store() {
 
       {
         products.loading ?
-        <img src={spinner} alt="spinner"  />:
+        <div>'
+
+          <img src={spinner} alt="spinner" className={styles.loading} />
+        </div>:
       
       products.products.map((item) => (
         <Product key={item.id} productsData={item} />
