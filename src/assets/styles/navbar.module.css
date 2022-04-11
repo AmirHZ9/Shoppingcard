@@ -9,6 +9,13 @@
   top: 0;
   
 }
+.mainAndCartIcon{
+  display: flex;
+  align-items: center;
+}
+.mainAndCartIcon div{
+  margin:20px;
+}
 .hamburgerMenu{
 
   position: relative;
@@ -18,13 +25,14 @@
 }
 .hamburgerMenu span{
   cursor: pointer;
+  font-weight: bold;
 }
 .hamburgerMenu ul{
   display: none;
   transition: 0.3s ease-in-out;
   position: absolute;
   list-style-type: none;
-  left: -26px;
+  left: -16px;
   border-radius: 8px;
 }
 .hamburgerMenu li{

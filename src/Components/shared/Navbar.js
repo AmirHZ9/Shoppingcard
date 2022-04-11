@@ -1,18 +1,20 @@
 import React from "react";
-import styles from "../../assets/styles/navbar.module.css";
 import { Link } from "react-router-dom";
+import styles from "../../assets/styles/navbar.module.css";
 import shopicon from "../../assets/icons/shop.svg";
+
 import { useSelector } from "react-redux";
 function Navbar() {
   const state = useSelector((state) => state.cartState);
   const products = useSelector(state => state.productState.products)
-  // console.log(categories)
   const category =   products.map(item => item.category)
   const uinqueCategory = [...new Set(category)]
  
   
   return (
     <div className={styles.main}>
+      <div className={styles.mainAndCartIcon}>
+
       <div>
         <Link to="/product" className={styles.link}>
           Products
@@ -26,13 +28,11 @@ function Navbar() {
           <span className={styles.number}>{state.itemsCounter}</span>
         </span>
       </div>
+      </div>
       <div className={styles.hamburgerMenu}>
-        <span>menu</span>
+        <span>category</span>
         <ul>
-          {/* <li><Link to="/Men's cloth">Men's cloth</Link></li>
-          <li><Link to="/women's cloth">women's cloth</Link></li>
-          <li><Link to="/jewelery">jewelery</Link></li>
-          <li><Link to="/electronics">electronics</Link></li> */}
+         
           {
             uinqueCategory.map(item => 
               <li ><Link key={item.indexOf()} to={`/product/category/${item}`}>{item}</Link></li>
